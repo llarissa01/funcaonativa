@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Restaurante JS</h1>
+    <hr>
+    <p>
+        Buffet por quilo R$:
+        <input type="text" id="inBuffet" placeholder="40">
+        
+    </p>
+
+    <p>
+        Consumo do cliente(gr):
+        <input type="text" id="inConsumo" placeholder="700">
+    </p>
+
+    <p>
+        <input type="button" value="Cálcular Preço" id="btnConverter">
+    </p>
+    <p id="outBuffet"></p>
+    <p id="outConsumo"></p>
+
+    <p>
+        Valor a pagar R$28.00
+    </p>
+
+    <script>
+        function consumoCliente(){
+            let inQuilo = document.getElementById('inQuilo')
+            let inGrama = document.getElementById('inGrama')
+            let outQuilo = document.getElementById('outQuilo')
+            let outCliente = document.getElementById('outCliente')
+
+            let quilo= inQuilo.value
+            let grama = inGrama.value
+
+            let valor = (quilo / 1000) * grama 
+
+            outCliente.textContent = `Valor a pagar ${valor}`
+        }
+
+        
+        let btnCalculo = document.getElementById('btnCalculo')
+        btnCalculo.addEventListener('click', consumoCliente)
+        
+    </script>
+</body>
+</html>
